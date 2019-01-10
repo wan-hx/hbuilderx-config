@@ -1,0 +1,38 @@
+[{
+    "name": "Pandoc转md为pdf",
+    "command": "pandoc ${file} -o ${fileBasename}.pdf",
+    "type": "terminal",
+    "key": ""
+  },
+  {
+    "name": "Pandoc转md为doc",
+    "command": "pandoc ${file} -o ${fileBasename}.docx",
+    "type": "terminal",
+    "key": ""
+  },
+  {
+    "name": "Pandoc转md为html",
+    "command": "pandoc ${file} -o ${fileBasename}.html",
+    "type": "terminal",
+    "key": ""
+  }
+],
+  {
+    "name": "scp传输文件到服务器",
+    "command": "scp -r ${projectDir} 用户名@ip:目录路径",
+    "type": "terminal",
+    "key": "alt+shift+s"
+  },
+  {
+    "name": "服务器(nginx启动)",
+    "command": "ssh 用户名@ip '/opt/nginx/sbin/nginx'",
+    "type": "terminal",
+    "key": ""
+  },
+  {
+    "name": "服务器(nginx重启)",
+    "command": "ssh 用户名@ip '/opt/nginx/sbin/nginx'",
+    "type": "terminal",
+    "key": ""
+  }
+]
