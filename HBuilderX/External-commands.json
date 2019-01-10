@@ -31,7 +31,7 @@
   },
   {
     "name": "服务器(nginx重启)",
-    "command": "ssh 用户名@ip '/opt/nginx/sbin/nginx'",
+    "command": "ssh 用户名@ip '/opt/nginx/sbin/nginx -s reload'",
     "type": "terminal",
     "key": ""
   }
