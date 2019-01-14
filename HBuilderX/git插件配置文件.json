@@ -1,0 +1,213 @@
+{
+	//注：修改插件配置需要重启HBuilderX
+	"name": "Git插件",	//插件名称
+	"id": "Git",	//插件ID，不可修改
+	"version": "1.0.0.2018122519",	//插件版本，用于升级
+	"external":{
+		"type": "program",	//插件类型，不可修改
+		"downLoadUrl": "",
+		"programPath": "",
+		"programName": "git",	//应用程序名称
+		"commands": [
+			{
+				"id":"GIT_FETCH_ALL",	//命令ID
+				"name":"git fetch 所有变动",	//外部命令显示名称
+				"command":["git", "fetch", "--all"],
+				"workingDir":"${projectDir}",
+				"key":"",	//快捷键
+				"showInParentMenu":false,	//是否显示在上一级菜单中
+				"onDidSaveExecution": false	,//是否保存时执行
+				"type":"terminal"
+			},
+			{
+				"id":"GIT_PULL",	//命令ID
+				"name":"git pull 拉取",	//外部命令显示名称
+				"command":["git", "pull"],
+				"workingDir":"${file}",
+				"key":"",	//快捷键
+				"showInParentMenu":false,	//是否显示在上一级菜单中
+				"onDidSaveExecution": false	,//是否保存时执行
+				"type":"terminal"
+			},
+			{
+				"id":"GIT_ADD",
+				"name":"git add 添加",
+				"command":["git", "add", "${file}"],	//${fileDir}表示当前目录,${file}表示当前文件,${projectDir}表示当前项目
+				"key":"",
+				"showInParentMenu":false,
+				"onDidSaveExecution": false,
+				"type":"terminal"
+			},
+			{
+				"id":"GIT_REMOVE",	//命令ID
+				"name":"git rm 删除文件或文件夹",	//外部命令显示名称
+				"command":["git", "rm", "${file}", "-r"],
+				"key":"",	//快捷键
+				"showInParentMenu":false,	//是否显示在上一级菜单中
+				"onDidSaveExecution": false	,//是否保存时执行
+				"type":"terminal"
+			},
+			{
+				"id":"GIT_COMMIT",
+				"name":"git commit",
+				"command":["git", "commit", "-m", "${userInput:请输入commit信息}"],
+				"key":"",
+				"showInParentMenu":false,
+				"onDidSaveExecution": false,
+				"type":"terminal"
+			},
+			{
+				"id":"GIT_PUSH",
+				"name":"git push",
+				"command":["git", "push"],
+				"workingDir":"${file}",
+				"key":"",
+				"showInParentMenu":false,
+				"onDidSaveExecution": false,
+				"type":"terminal"
+			},
+			{
+				"id":"GIT_BRANCH",
+				"name":"git branch 查看所有分支",
+				"command":["git", "branch", "-a"],
+				"workingDir":"${projectDir}",
+				"key":"",
+				"showInParentMenu":false,
+				"onDidSaveExecution": false,
+				"type":"terminal"
+			},
+			{
+				"id":"GIT_BRANCH_DELETE",
+				"name":"git branch 删除分支",
+				"command":["git", "branch", "-d", "${userInput:请输入分支名称}"],
+				"workingDir":"${projectDir}",
+				"key":"",
+				"showInParentMenu":false,
+				"onDidSaveExecution": false,
+				"type":"terminal"
+			},
+      {
+      	"id":"GIT_CHECKOUT_BRANCH_MASTER",
+      	"name":"git checkout 切换master分支",
+      	"command":["git", "checkout", "master"],
+      	"workingDir":"${projectDir}",
+      	"key":"",
+      	"showInParentMenu":false,
+      	"onDidSaveExecution": false,
+      	"type":"terminal"
+      },
+			{
+				"id":"GIT_CHECKOUT_BRANCH",
+				"name":"git checkout 切换分支",
+				"command":["git", "checkout", "${userInput:请输入要切换的分支}"],
+				"workingDir":"${projectDir}",
+				"key":"",
+				"showInParentMenu":false,
+				"onDidSaveExecution": false,
+				"type":"terminal"
+			},
+			{
+				"id":"GIT_CHECKOUT_NEW_BRANCH",
+				"name":"git checkout 新建分支",
+				"command":["git", "checkout", "-b", "${userInput:请输入新分支名称}"],
+				"workingDir":"${projectDir}",
+				"key":"",
+				"showInParentMenu":false,
+				"onDidSaveExecution": false,
+				"type":"terminal"
+			},
+			{
+				"id":"GIT_CHECKOUT_MERGE",
+				"name":"git merge 合并分支",
+				"command":["git", "merge", "${userInput:请输入分支名称}"],
+				"workingDir":"${projectDir}",
+				"key":"",
+				"showInParentMenu":false,
+				"onDidSaveExecution": false,
+				"type":"terminal"
+			},
+			{
+				"id":"GIT_STATUS",
+				"name":"git status 查看状态",
+				"command":["git", "status"],
+				"workingDir":"${projectDir}",
+				"key":"",
+				"showInParentMenu":false,
+				"onDidSaveExecution": false,
+				"type":"terminal"
+			},
+			{
+				"id":"GIT_REVERT",
+				"name":"git revert 还原",
+				"command":["git", "revert", "HEAD"],
+				"key":"",
+				"showInParentMenu":false,
+				"onDidSaveExecution": false,
+				"type":"terminal"
+			},
+			{
+				"id":"GIT_RESET",
+				"name":"git reset 恢复",
+				"command":["git", "reset"],
+				"key":"",
+				"showInParentMenu":false,
+				"onDidSaveExecution": false,
+				"type":"terminal"
+			},
+      {
+      	"id":"GIT_RESET_COMMIT",
+      	"name":"git reset 回退到指定版本",
+      	"command":["git", "reset", "--hard","${userInput:请输入commit id}"],
+        "workingDir":"${projectDir}",
+      	"key":"",
+      	"showInParentMenu":false,
+      	"onDidSaveExecution": false,
+      	"type":"terminal"
+      },
+			{
+				"id":"GIT_LOG",
+				"name":"git log 显示日志",
+				"command":["git", "log", "--pretty=oneline", "${file}"],
+				"workingDir":"${projectDir}",
+				"key":"",
+				"showInParentMenu":false,
+				"onDidSaveExecution": false,
+				"type":"terminal"
+			},
+      {
+      	"id":"GIT_TAG_CREATE",
+      	"name":"git tag 打标签",
+      	"command":["git", "tag", "${userInput:请输入tag名称}"],
+        "workingDir":"${projectDir}",
+      	"key":"",
+      	"showInParentMenu":false,
+      	"onDidSaveExecution": false,
+      	"type":"terminal"
+      },
+      {
+      	"id":"GIT_TAG_list",
+      	"name":"git tag 查看标签列表",
+      	"command":["git", "tag"],
+        "workingDir":"${projectDir}",
+      	"key":"",
+      	"showInParentMenu":false,
+      	"onDidSaveExecution": false,
+      	"type":"terminal"
+      },
+      {
+      	"id":"GIT_SHOW_INFO",
+      	"name":"git show 查看标签信息",
+      	"command":["git", "show","${userInput:请输入要查看的tag名称}"],
+        "workingDir":"${projectDir}",
+      	"key":"",
+      	"showInParentMenu":false,
+      	"onDidSaveExecution": false,
+      	"type":"terminal"
+      }
+		]
+	},
+	"extensionDependencies": [
+		"builtinterminal"
+	],
+	"description": "Git插件用于Git文件操作"
+}
