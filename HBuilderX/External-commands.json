@@ -1,38 +1,54 @@
 [{
-    "name": "Pandoc转md为pdf",
-    "command": "pandoc ${file} -o ${fileBasename}.pdf",
-    "type": "terminal",
-    "key": ""
-  },
-  {
-    "name": "Pandoc转md为doc",
-    "command": "pandoc ${file} -o ${fileBasename}.docx",
-    "type": "terminal",
-    "key": ""
-  },
-  {
-    "name": "Pandoc转md为html",
-    "command": "pandoc ${file} -o ${fileBasename}.html",
-    "type": "terminal",
-    "key": ""
-  }
-],
-  {
-    "name": "scp传输文件到服务器",
-    "command": "scp -r ${projectDir} 用户名@ip:目录路径",
-    "type": "terminal",
-    "key": "alt+shift+s"
-  },
-  {
-    "name": "服务器(nginx启动)",
-    "command": "ssh 用户名@ip '/opt/nginx/sbin/nginx'",
-    "type": "terminal",
-    "key": ""
-  },
-  {
-    "name": "服务器(nginx重启)",
-    "command": "ssh 用户名@ip '/opt/nginx/sbin/nginx -s reload'",
-    "type": "terminal",
-    "key": ""
-  }
+        "name": "调用TinyPNG无损压缩图片",
+        "command": "curl --user api:YOUR_API_KEY --data-binary @${file} -i https://api.tinify.com/shrink --output ${file}",
+        "type": "terminal",
+        "key": "alt+shift+m"
+    }, {
+        "name": "Pandoc转md为pdf",
+        "command": "pandoc ${file} -o ${fileBasename}.pdf",
+        "type": "terminal",
+        "key": ""
+    },
+    {
+        "name": "Pandoc转md为word",
+        "command": "pandoc ${file} -o ${fileBasename}.docx",
+        "type": "terminal",
+        "key": ""
+    },
+    {
+        "name": "Pandoc转md为html",
+        "command": "pandoc ${file} -o ${fileBasename}.html",
+        "type": "terminal",
+        "key": ""
+    }, {
+        "name": "简易文件下载器",
+        "command": "wget -c ${userInput:输入要下载的地址url}",
+        "type": "terminal",
+        "key": "alt+shift+D"
+    }, {
+        "name": "scp传输文件到服务器",
+        "command": "scp -r ${projectDir} 用户名@ip:目录路径",
+        "type": "terminal",
+        "key": "alt+shift+s"
+    }, {
+        "name": "服务器(nginx启动)",
+        "command": "ssh 用户名@ip '/opt/nginx/sbin/nginx'",
+        "type": "terminal",
+        "key": ""
+    }, {
+        "name": "服务器(nginx重启)",
+        "command": "ssh 用户名@ip '/opt/nginx/sbin/nginx -s reload'",
+        "type": "terminal",
+        "key": ""
+    }, {
+        "name": "ping测试",
+        "command": "ping ${userInput:请输入ip地址}",
+        "type": "terminal",
+        "key": ""
+    }, {
+        "name": "安装apk到android手机",
+        "command": "adb install ${file}",
+        "type": "terminal",
+        "key": ""
+    }
 ]
