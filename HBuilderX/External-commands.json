@@ -50,5 +50,10 @@
         "command": "adb install ${file}",
         "type": "terminal",
         "key": ""
+    }, {
+        "name": "Mac查看CPU和内存",
+        "command": "top",
+        "type": "terminal",
+        "key": ""
     }
 ]
