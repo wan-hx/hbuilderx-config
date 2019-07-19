@@ -55,5 +55,10 @@
         "command": "top",
         "type": "terminal",
         "key": ""
+    }, {
+        "name": "Windows使用qrcode生成二维码",
+        "command": "type ${file} | qr > ${fileBasename}.png ",
+        "type": "process",
+        "key": ""
     }
 ]
