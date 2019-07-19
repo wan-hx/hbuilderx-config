@@ -1,3 +1,3 @@
 # MyConfig
 
-- [ ] HBuilderX 外部命令
+HBuilderX 外部命令使用案列
