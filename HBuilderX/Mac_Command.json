@@ -1,0 +1,143 @@
+[{
+    "name": "svn更新",
+    "command": "svn update",
+    "type": "shell"
+  },
+  {
+    "name": "git 更新",
+    "command": "cmd /K \"cd ${file}&&git pull --rebase\"",
+    "type": "process"
+  },
+  {
+    "name": "git 查看分支",
+    "command": "cmd /K \"cd ${file}&&git branch -a\"",
+    "type": "shell"
+  }, {
+    "name": "_调用TinyPNG无损压缩图片",
+    "command": "curl --user api:YOUR_API_KEY --data-binary @${file} -i https://api.tinify.com/shrink --output ${file}",
+    "type": "terminal",
+    "key": "alt+shift+m"
+  }, {
+    "name": "Pandoc转md为pdf",
+    "command": "pandoc ${file} -o ${fileBasename}.pdf",
+    "type": "terminal",
+    "key": ""
+  },
+  {
+    "name": "Pandoc转md为word",
+    "command": "pandoc ${file} -o ${fileBasename}.docx",
+    "type": "terminal",
+    "key": ""
+  },
+  {
+    "name": "Pandoc转md为html",
+    "command": "pandoc ${file} -o ${fileBasename}.html",
+    "type": "terminal",
+    "key": ""
+  }, {
+    "name": "简易文件下载器",
+    "command": "wget -c ${userInput:输入要下载的地址url}",
+    "type": "terminal",
+    "key": "alt+shift+D"
+  }, {
+    "name": "scp传输文件到服务器",
+    "command": "scp -r ${projectDir} 用户名@ip:目录路径",
+    "type": "terminal",
+    "key": "alt+shift+s"
+  }, {
+    "name": "服务器(nginx启动)",
+    "command": "ssh 用户名@ip '/opt/nginx/sbin/nginx'",
+    "type": "terminal",
+    "key": ""
+  }, {
+    "name": "服务器(nginx重启)",
+    "command": "ssh 用户名@ip '/opt/nginx/sbin/nginx -s reload'",
+    "type": "terminal",
+    "key": ""
+  }, {
+    "name": "ping测试",
+    "command": "ping ${userInput:请输入ip地址}",
+    "type": "terminal",
+    "key": ""
+  }, {
+    "name": "安装apk到android手机",
+    "command": "adb install ${file}",
+    "type": "terminal",
+    "key": ""
+  }, {
+    "name": "Mac查看CPU和内存",
+    "command": "top",
+    "type": "terminal",
+    "key": ""
+  }, {
+    "name": "Windows使用qrcode生成二维码",
+    "command": "type ${file} | qr > ${fileBasename}.png ",
+    "type": "process",
+    "key": ""
+  },
+  {
+    "name": "_文件: 压缩7z格式",
+    "command": "\"C:/Program\ Files/7-Zip/7z.exe\" a ${file}.7z ${file}",
+    "type": "process",
+    "key": ""
+  },
+  {
+    "name": "_文件: 压缩zip格式",
+    "command": [
+      "C:/Program Files/7-Zip/7z.exe",
+      "a",
+      "${file}.zip",
+      "${file}"
+    ],
+    "type": "process",
+    "key": ""
+  },
+  {
+    "name": "_文件: 解压",
+    "command": "\"C:/Program Files/7-Zip/7z.exe\" x ${file}",
+    "type": "shell",
+    "key": ""
+  },
+  {
+    "name": "_图片: 转png",
+    "command": "magick.exe ${file} ${fileBasename}.png",
+    "type": "process",
+    "key": ""
+  },
+  {
+    "name": "_图片: 所有的png图片制作为gif",
+    "command": "magick.exe convert *.png xxx.gif",
+    "type": "process",
+    "key": ""
+  },
+  {
+    "name": "_图片: 缩小或放大",
+    "command": "magick.exe convert -resize \"${userInput:请输入图片尺寸}\" ${file} 3.png",
+    "type": "process",
+    "key": ""
+  },
+  {
+    "name": "删除文件",
+    "command": "cmd /K \"cd ${fileDir}&&del /q ${fileName}\"",
+    "type": "process",
+    "key": "ctrl+shift+del"
+  },
+  {
+    "name": "删除文件夹",
+    "command": "cmd /K \"cd ${fileDir}&&rd /s/q ${file}\"",
+    "type": "process",
+    "key": "ctrl+shift+d"
+  },
+  {
+    "name": "Mac: 压缩目录为bz2",
+    "command": "cd ${fileDir} && tar -jcvf ${fileBasename}.tar.bz2 ${fileBasename}",
+    "type": "terminal",
+    "key": "alt+shift+e"
+  },
+  {
+    "name": "Mac: 解压zip包",
+    "command": "unzip ${file}",
+    "type": "terminal",
+    "key": "alt+shift+e"
+  }
+]
